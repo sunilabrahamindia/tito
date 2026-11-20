@@ -64,7 +64,7 @@ Firmware and Ubuntu kernel/firmware updates were part of the troubleshooting wor
 
 ### Ubuntu logs and driver investigation
 
-#### Realtek Wi-Fi messages
+### Realtek Wi-Fi messages
 
 During the November 2026 investigation, Ubuntu logs showed recurring messages associated with the Realtek RTL8821CE Wi-Fi driver, including:
 
@@ -75,7 +75,7 @@ unhandled firmware c2h interrupt
 
 These messages indicate a problem involving communication between the Wi-Fi driver and its firmware. They are worth tracking, but the investigation did not establish that they caused the complete system freezes or kernel panics.
 
-#### Boot history
+### Boot history
 
 The command below was used to inspect the recorded boot history:
 
@@ -85,7 +85,7 @@ journalctl --list-boots
 
 The output examined on 19 November 2026 showed nine recorded boots for that date.
 
-#### Kernel panic
+### Kernel panic
 
 The error `Attempted to kill init` was also part of the reported kernel-panic history. Its root cause was not established by the log review described here.
 
