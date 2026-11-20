@@ -4,8 +4,6 @@
 
 These notes record the troubleshooting work carried out on the HP laptop. The purpose is to keep a dated technical history of the symptoms, tests, changes and findings, so that future investigations can continue from the available evidence rather than repeat earlier work.
 
-This is an ongoing record. New investigations should be added as new dated sections, with the date as an H2 heading. The information for each date should sit beneath that date.
-
 ### Laptop details
 
 The laptop used during these investigations was recorded as:
@@ -108,31 +106,3 @@ The logs examined at that stage did not establish corresponding NVMe I/O errors,
 There is evidence of a physical NVMe connection issue identified during inspection, as well as a separate, unresolved investigation into Ubuntu kernel and Realtek Wi-Fi driver messages.
 
 It would be premature to attribute every freeze, restart or kernel panic to either one of these findings. Further observations and logs are needed to establish whether the problems share a cause or are separate issues.
-
-### How to add future entries
-
-For each new troubleshooting session, add a new H2 date heading after the previous entry. Put that session's details beneath it, using H3 headings for the relevant sections. For example:
-
-```markdown
-## 21 November 2026
-
-### Problem observed
-
-Describe what happened.
-
-### Tests performed
-
-Record the commands, diagnostic tests and relevant output.
-
-### Changes made
-
-Record any updates, settings or hardware changes.
-
-### Outcome
-
-State whether the problem occurred again and what remains unresolved.
-```
-
-For each investigation, record the date and approximate time, symptom observed, command or diagnostic test used, relevant output or exact error message, any change made to the system, and whether the issue occurred again after the change.
-
-Keep original output where practical. Distinguish a test result from an interpretation, and mark anything not yet verified as unconfirmed.
