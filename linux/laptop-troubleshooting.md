@@ -1,12 +1,12 @@
 # Linux laptop troubleshooting notes
 
-**Record created:** 20 November 2026
+## 20 November 2026
 
 These notes record the troubleshooting work carried out on the HP laptop. The purpose is to keep a dated technical history of the symptoms, tests, changes and findings, so that future investigations can continue from the available evidence rather than repeat earlier work.
 
-This is an ongoing record. New investigations should be added as dated entries, and confirmed findings should be kept separate from possible explanations.
+This is an ongoing record. New investigations should be added as new dated sections, with the date as an H2 heading. The information for each date should sit beneath that date.
 
-## Laptop details
+### Laptop details
 
 The laptop used during these investigations was recorded as:
 
@@ -19,7 +19,7 @@ The laptop used during these investigations was recorded as:
 
 These details should be checked again if the hardware or operating system configuration changes.
 
-## Problem history
+### Problem history
 
 The reported problems included intermittent system freezes, unexpected shutdowns or restarts, kernel panics and occasions when the laptop failed to detect the boot drive.
 
@@ -31,7 +31,7 @@ Errors seen during the troubleshooting history included:
 
 The problems were not conclusively attributed to one cause. The investigations covered both hardware and Ubuntu software/driver behaviour.
 
-## Tests and hardware checks
+### Tests and hardware checks
 
 The following results were recorded during earlier troubleshooting:
 
@@ -48,7 +48,7 @@ An earlier SSD health check reported approximately 3% life used and a temperatur
 
 Passing these tests did not rule out an intermittent physical connection problem. A drive can pass its health tests while its connection is unreliable.
 
-## Physical inspection
+### Physical inspection
 
 A diagnostic centre identified a loose NVMe/SSD connection inside the laptop.
 
@@ -56,15 +56,15 @@ This is an important finding because an intermittent connection could explain oc
 
 The precise repair or reseating work carried out at the centre, and whether the connection has remained stable since then, should be recorded when confirmed.
 
-## BIOS, firmware and kernel work
+### BIOS, firmware and kernel work
 
 The recorded BIOS version was **F.34**, dated **29 July 2024**.
 
 Firmware and Ubuntu kernel/firmware updates were part of the troubleshooting work. The exact package versions, update dates and any BIOS changes should be added when the relevant system records are available. Do not assume that an update fixed the underlying problem unless this is supported by subsequent observations.
 
-## Ubuntu logs and driver investigation
+### Ubuntu logs and driver investigation
 
-### Realtek Wi-Fi messages
+#### Realtek Wi-Fi messages
 
 During the November 2026 investigation, Ubuntu logs showed recurring messages associated with the Realtek RTL8821CE Wi-Fi driver, including:
 
@@ -75,7 +75,7 @@ unhandled firmware c2h interrupt
 
 These messages indicate a problem involving communication between the Wi-Fi driver and its firmware. They are worth tracking, but the investigation did not establish that they caused the complete system freezes or kernel panics.
 
-### Boot history
+#### Boot history
 
 The command below was used to inspect the recorded boot history:
 
@@ -85,13 +85,13 @@ journalctl --list-boots
 
 The output examined on 19 November 2026 showed nine recorded boots for that date.
 
-### Kernel panic
+#### Kernel panic
 
 The error `Attempted to kill init` was also part of the reported kernel-panic history. Its root cause was not established by the log review described here.
 
 The logs examined at that stage did not establish corresponding NVMe I/O errors, AMD graphics errors, memory errors or machine-check exceptions. This is limited to the logs reviewed; it is not proof that those components can never be involved.
 
-## Findings so far
+### Findings so far
 
 | Area | What is known |
 |---|---|
@@ -103,27 +103,36 @@ The logs examined at that stage did not establish corresponding NVMe I/O errors,
 | Kernel panics | `Attempted to kill init` was reported; its cause remains unresolved. |
 | AMD graphics | No specific fault was established in the logs reviewed. |
 
-## Current assessment
+### Current assessment
 
 There is evidence of a physical NVMe connection issue identified during inspection, as well as a separate, unresolved investigation into Ubuntu kernel and Realtek Wi-Fi driver messages.
 
 It would be premature to attribute every freeze, restart or kernel panic to either one of these findings. Further observations and logs are needed to establish whether the problems share a cause or are separate issues.
 
-## Troubleshooting timeline
+### How to add future entries
 
-### 20 November 2026
+For each new troubleshooting session, add a new H2 date heading after the previous entry. Put that session's details beneath it, using H3 headings for the relevant sections. For example:
 
-This entry consolidates earlier hardware checks, the physical inspection finding and the Ubuntu log investigation into one starting record for future troubleshooting. Some of the underlying tests and events took place before this date; the date here marks when this record was created, not when every test was performed.
+```markdown
+## 21 November 2026
 
-### Future entries
+### Problem observed
 
-For each new investigation, record:
+Describe what happened.
 
-- Date and approximate time.
-- Symptom observed, including whether the laptop froze, restarted or failed to boot.
-- Command or diagnostic test used.
-- Relevant output or exact error message.
-- Any change made to the system.
-- Whether the issue occurred again after the change.
+### Tests performed
 
-Keep the original output where practical. Distinguish a test result from an interpretation, and mark anything not yet verified as unconfirmed.
+Record the commands, diagnostic tests and relevant output.
+
+### Changes made
+
+Record any updates, settings or hardware changes.
+
+### Outcome
+
+State whether the problem occurred again and what remains unresolved.
+```
+
+For each investigation, record the date and approximate time, symptom observed, command or diagnostic test used, relevant output or exact error message, any change made to the system, and whether the issue occurred again after the change.
+
+Keep original output where practical. Distinguish a test result from an interpretation, and mark anything not yet verified as unconfirmed.
