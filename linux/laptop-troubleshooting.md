@@ -1,6 +1,6 @@
 # Linux laptop troubleshooting notes
 
-**Date:** 20 November 2026
+**Record created:** 20 November 2026
 
 These notes record the troubleshooting work carried out on the HP laptop. The purpose is to keep a dated technical history of the symptoms, tests, changes and findings, so that future investigations can continue from the available evidence rather than repeat earlier work.
 
