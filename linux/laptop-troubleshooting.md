@@ -21,6 +21,8 @@ These details should be checked again if the hardware or operating system config
 
 The reported problems included intermittent system freezes, unexpected shutdowns or restarts, kernel panics and occasions when the laptop failed to detect the boot drive.
 
+The initial freeze reports particularly mentioned using Chrome with multiple tabs open. This records the situation in which freezes were noticed; it does not establish Chrome as the cause. Complete system freezes were also reported, along with unexpected shutdowns or restarts.
+
 Errors seen during the troubleshooting history included:
 
 - `Attempted to kill init`
